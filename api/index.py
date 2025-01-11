@@ -51,38 +51,38 @@ def generate_random_hwid_relz():
     ]
     return '-'.join(segments)
 
-@app.route('/flux_gen', methods=['GET'])
-def flux_gen():
+@app.route('/fluxus', methods=['GET'])
+def fluxus():
     random_hwid = generate_random_hwid_flux()
     url = f"https://flux.li/android/external/start.php?HWID={random_hwid}"
     return jsonify({"result": url})
 
-@app.route('/trigon_gen', methods=['GET'])
-def trigon_gen():
+@app.route('/trigon', methods=['GET'])
+def trigon():
     random_hwid = generate_random_hwid_trigon()
     url = f"https://trigonevo.fun/whitelist/?HWID={random_hwid}"
     return jsonify({"result": url})
 
-@app.route('/arceus_gen', methods=['GET'])
-def arceus_gen():
+@app.route('/arceus', methods=['GET'])
+def arceus():
     random_hwid = generate_random_hwid_arceus()
     url = f"https://spdmteam.com/key-system-1?hwid={random_hwid}&zone=Europe/Rome&os=android"
     return jsonify({"result": url})
 
-@app.route('/vegax_gen', methods=['GET'])
-def vegax_gen():
+@app.route('/vegax', methods=['GET'])
+def vegax():
     random_hwid = generate_random_hwid_vegax()
     url = f"https://pandadevelopment.net/getkey?service=vegax&hwid={random_hwid}&provider=linkvertise"
     return jsonify({"result": url})
 
-@app.route('/evon_gen', methods=['GET'])
-def evon_gen():
+@app.route('/evon', methods=['GET'])
+def evon():
     random_hwid = generate_random_hwid_evon()
     url = f"https://pandadevelopment.net/getkey?service=evon&hwid={random_hwid}"
     return jsonify({"result": url})
 
-@app.route('/relz_gen', methods=['GET'])
-def relz_gen():
+@app.route('/relz', methods=['GET'])
+def relz():
     random_hwid = generate_random_hwid_relz()
     url = f"https://getkey.relzscript.xyz/redirect.php?hwid={random_hwid}"
     return jsonify({"result": url})
