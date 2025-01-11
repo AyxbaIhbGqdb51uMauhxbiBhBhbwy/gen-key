@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import random
 import string
 
@@ -54,32 +54,38 @@ def generate_random_hwid_relz():
 @app.route('/flux_gen', methods=['GET'])
 def flux_gen():
     random_hwid = generate_random_hwid_flux()
-    return f"https://flux.li/android/external/start.php?HWID={random_hwid}"
+    url = f"https://flux.li/android/external/start.php?HWID={random_hwid}"
+    return jsonify({"result": url})
 
 @app.route('/trigon_gen', methods=['GET'])
 def trigon_gen():
     random_hwid = generate_random_hwid_trigon()
-    return f"https://trigonevo.fun/whitelist/?HWID={random_hwid}"
+    url = f"https://trigonevo.fun/whitelist/?HWID={random_hwid}"
+    return jsonify({"result": url})
 
 @app.route('/arceus_gen', methods=['GET'])
 def arceus_gen():
     random_hwid = generate_random_hwid_arceus()
-    return f"https://spdmteam.com/key-system-1?hwid={random_hwid}&zone=Europe/Rome&os=android"
+    url = f"https://spdmteam.com/key-system-1?hwid={random_hwid}&zone=Europe/Rome&os=android"
+    return jsonify({"result": url})
 
 @app.route('/vegax_gen', methods=['GET'])
 def vegax_gen():
     random_hwid = generate_random_hwid_vegax()
-    return f"https://pandadevelopment.net/getkey?service=vegax&hwid={random_hwid}&provider=linkvertise"
+    url = f"https://pandadevelopment.net/getkey?service=vegax&hwid={random_hwid}&provider=linkvertise"
+    return jsonify({"result": url})
 
 @app.route('/evon_gen', methods=['GET'])
 def evon_gen():
     random_hwid = generate_random_hwid_evon()
-    return f"https://pandadevelopment.net/getkey?service=evon&hwid={random_hwid}"
+    url = f"https://pandadevelopment.net/getkey?service=evon&hwid={random_hwid}"
+    return jsonify({"result": url})
 
 @app.route('/relz_gen', methods=['GET'])
 def relz_gen():
     random_hwid = generate_random_hwid_relz()
-    return f"https://getkey.relzscript.xyz/redirect.php?hwid={random_hwid}"
+    url = f"https://getkey.relzscript.xyz/redirect.php?hwid={random_hwid}"
+    return jsonify({"result": url})
 
 if __name__ == '__main__':
     app.run(debug=True)
