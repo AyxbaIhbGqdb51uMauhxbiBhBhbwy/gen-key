@@ -87,5 +87,11 @@ def relz():
     url = f"https://getkey.relzscript.xyz/redirect.php?hwid={random_hwid}"
     return jsonify({"result": url})
 
+@app.route('/codex', methods=['GET'])
+def codex():
+    token = ''.join(random.choices(string.ascii_lowercase + string.digits, k=96))
+    url = f"https://mobile.codex.lol/?token={token}"
+    return jsonify({"result": url})
+
 if __name__ == '__main__':
     app.run(debug=True)
