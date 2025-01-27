@@ -86,7 +86,7 @@ def handle_service(service):
     else:
         return jsonify({"error": "Service not found"}), 404
 
-    return jsonify({"result": url})
+    return jsonify({"link": url})
 
 if __name__ == '__main__':
     app.run(debug=True)
